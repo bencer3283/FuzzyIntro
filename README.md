@@ -6,11 +6,11 @@ $ conda create --name <env> --file packages.txt
 
 ## Programs
 - Member functions are defined in `memberFunction.py`, run this file to see the member function graph.
-- Run `defuzzification.py` to test the control system by enter air temp. and soil moisture. Enter "exit" to leave the control system.
+- Run `defuzzification.py` to test the control system by enter air temp. and soil moisture. Enter "exit" to leave the control system. Fuzzy rules are defined here.
 - Run `drawSurface.py` to check out the performance graph. 
 
 # The initial settings
-Roll back to [this commit](https://github.com/bencer3283/FuzzyIntro/tree/f8c130db03f7717e3be07e111ea787a6a3fa1187) for initial MF parameters (defined in `memberFeunction.py`). 
+Roll back to [this commit](https://github.com/bencer3283/FuzzyIntro/tree/f8c130db03f7717e3be07e111ea787a6a3fa1187) for initial settings, including old MF nodes (in `memberFunction.py`) and rules(in `defuzzication.py`). 
 ## Member function
 ![](graphs/iniMF.png)
 
