@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 # Range
 
 ## range of temp. & soil & watering 
-x_temp_range = np.arange(-10,45,1,np.float32)
-x_soil_range = np.arange(0,100,1,np.float32)
+x_temp_range = np.arange(-5,45,1,np.float32)
+x_soil_range = np.arange(0,100,0.1,np.float32)
 y_time_range=np.arange(0,31,1,np.float32)
 ##　variable and membership functions
 x_temp = fuzzyControl.Antecedent(x_temp_range,"temp")
@@ -22,7 +22,7 @@ normal = [18,25,32]
 x_temp["normal"] = fuzzy.trimf(x_temp_range,normal)
 warm = [23,30,35]
 x_temp["warm"] = fuzzy.trimf(x_temp_range,warm)
-hot = [32,36,42,42]
+hot = [32,36,45,45]
 x_temp["hot"] = fuzzy.trapmf(x_temp_range,hot)
 
 dry = [0,0,16.5,49.5]
