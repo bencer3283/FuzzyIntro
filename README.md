@@ -61,44 +61,42 @@ The current version. Following modifitaions made:
 - Increased membership towards longer time.
 - Rules are modified. Cool & moist is added to medium.
 ## Member function
-![](graphs/iniMF.png)
+![](graphs/newMF.png)
 
 ## Some case test
 ### Extreme end of universe:
-At the extreme end the time seems to go to the same value of ~2.8.
+Not much difference here, extreme cold/wet case still always leads to low watering.
 - Temp: -5, Soil: 0
-    - Time: 2.8000000145037967
+    - Time: 3.307692321564789
 - Temp: -5, Soil: 100
-    - Time: 2.8000000145037967
+    - Time: 3.307692321564789
 - Temp: 45, Soil: 0
-    - Time: 24.55555552181113
+    - Time: 24.399999996473394
 - Temp: 45, Soil: 100
-    - Time: 2.8000000145037967
-### Extreme end of each MF:
-Watering time seems wiredly low at end of MFs.
-- Temp: 10, Soil: 50
-    - Time: 3.523809523809524
-- Temp: 8, Soil: 50
-    - Time: 3.4352941244359383
-- Temp: 20, Soil: 17
-    - Time: 12.499999999999998
-- Temp: 32, Soil: 100
-    - Time: 3.187096760318533
-- Temp: 35, Soil: 66
-    - Time: 12.44622626691289
+    - Time: 3.307692321564789
 
-### MF overlaps: 
-It seems like the system hesitate to raise watering time too much.
+### Extreme end of each MF:
+These middle range ends of MF all seems to yeild middle range watering.
+- Temp: 13, Soil: 46
+    - Time: 13.39862544732253
+- Temp: 20, Soil: 35
+    - Time: 13.120765718985432
+- Temp: 15, Soil: 66
+    - Time: 13.349196021984913
+- Temp: 32, Soil: 66
+    - Time: 12.869082115105352
+- Temp: 32, Soil: 46
+    - Time: 12.951948050753762
+
+### MF overlaps:
+All resulting watering are a bit higher.
 - Temp: 9, Soil: 30
-    - Time: 11.104804798990116
+    - Time: 9.19252148304985
 - Temp: 19, Soil: 74
-    - Time: 10.353458111049935
+    - Time: 12.212077396151347
 - Temp: 27, Soil: 30
-    - Time: 17.0306432075052
+    - Time: 18.604120117725422
 
 ## Performance surface
-Some problems observed here:
-1. Watering time seems overwhelmingly dominated by soil moisture.
-1. The control system hesitate too much to raise watering time.
-2. Some cutoffs are clearly too sharp. 
-![](graphs/initPS.png)
+The steep cutoff are removed. High watering regions are increased.
+![](graphs/newPS.png)
