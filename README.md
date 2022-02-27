@@ -47,4 +47,8 @@ It seems like the system hesitate to raise watering time too much.
     - Time: 17.0306432075052
 
 ## Performance surface
+Some problems observed here:
+1. Watering time seems overwhelmingly dominated by soil moisture.
+1. The control system hesitate too much to raise watering time.
+2. Some cutoffs are clearly too sharp. 
 ![](graphs/initPS.png)

@@ -46,19 +46,19 @@ figure1.plot(x_temp_range,fuzzy.trimf(x_temp_range,cool),'g',linewidth=1.5,label
 figure1.plot(x_temp_range,fuzzy.trimf(x_temp_range,normal),'r',linewidth=1.5,label='normal')
 figure1.plot(x_temp_range,fuzzy.trimf(x_temp_range,warm),'y',linewidth=1.5,label='warm')
 figure1.plot(x_temp_range,fuzzy.trapmf(x_temp_range,hot),'k',linewidth=1.5,label='hot')
-figure1.set_title('Air Temperature')
+figure1.set_title('Air Temperature (C)')
 figure1.legend()
 
 figure2.plot(x_soil_range,fuzzy.trapmf(x_soil_range,dry),'b',linewidth=1.5,label='dry')
 figure2.plot(x_soil_range,fuzzy.trapmf(x_soil_range,moist),'g',linewidth=1.5,label='moist')
 figure2.plot(x_soil_range,fuzzy.trapmf(x_soil_range,wet),'r',linewidth=1.5,label='wet')
-figure2.set_title('Soil Moisture')
+figure2.set_title('Soil Moisture (%)')
 figure2.legend()
 
 figure3.plot(y_time_range,fuzzy.trapmf(y_time_range,short),'b',linewidth=1.5,label='short')
 figure3.plot(y_time_range,fuzzy.trapmf(y_time_range,medium),'g',linewidth=1.5,label='medium')
 figure3.plot(y_time_range,fuzzy.trapmf(y_time_range,long),'r',linewidth=1.5,label='long')
-figure3.set_title('Watering Duration')
+figure3.set_title('Watering Duration (min)')
 figure3.legend()
 
 # plot 2d figures
