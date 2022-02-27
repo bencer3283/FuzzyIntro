@@ -69,4 +69,6 @@ for fi in (figure1,figure2,figure3):
   fi.get_yaxis().tick_left()
 
 plt.tight_layout()
-plt.show()
+
+if __name__=='__main__':
+    plt.show()

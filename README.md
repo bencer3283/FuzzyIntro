@@ -1,2 +1,2 @@
-# The initial setting og member function
+# The initial setting of member function
 ![](iniMF.png)
