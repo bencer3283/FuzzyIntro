@@ -2,13 +2,13 @@ from cProfile import label
 from os import system
 import skfuzzy.control as fuzzyControl
 
-from memberFunction import x_temp, x_soil, y_time
+from memberFunction import x_temp, x_humid, y_time
 
 y_time.defuzzify_method = 'centroid'
 
-ruleLong = fuzzyControl.Rule(antecedent=((x_temp["hot"]&x_soil["dry"])|(x_temp["warm"]&x_soil["dry"])), consequent=y_time['long'], label='Long')
-ruleMedium = fuzzyControl.Rule(antecedent=((x_temp["cool"]&x_soil["moist"])|(x_temp["cool"]&x_soil["dry"])|(x_temp["hot"]&x_soil["moist"])|(x_temp["warm"]&x_soil["moist"])|(x_temp["normal"]&x_soil["moist"])|(x_temp["normal"]&x_soil["dry"])), consequent = y_time["medium"], label="Medium")
-ruleShort = fuzzyControl.Rule(antecedent=((x_temp["cold"]&x_soil["moist"])|(x_temp["hot"]&x_soil["wet"])|(x_temp["warm"]&x_soil["wet"])|(x_temp["normal"]&x_soil["wet"])|(x_temp["cool"]&x_soil["wet"])|(x_temp["cold"]&x_soil["wet"])|(x_temp['cold']&x_soil['dry'])), consequent=y_time["short"], label="Short")
+ruleLong = fuzzyControl.Rule(antecedent=((x_temp["far"]&x_humid["wet"])|(x_temp["far"]&x_humid["medium"])|(x_temp["medium"]&x_humid["wet"])), consequent=y_time['long'], label='Long')
+ruleMedium = fuzzyControl.Rule(antecedent=((x_temp["medium"]&x_humid["medium"])|(x_temp["far"]&x_humid["dry"])|(x_temp["close"]&x_humid["wet"])|(x_temp["close"]&x_humid["medium"])), consequent = y_time["medium"], label="Medium")
+ruleShort = fuzzyControl.Rule(antecedent=((x_temp["close"]&x_humid["dry"])|(x_temp["medium"]&x_humid["dry"])), consequent=y_time["short"], label="Short")
 
 system = fuzzyControl.ControlSystem([ruleLong, ruleMedium, ruleShort])
 systemSimu = fuzzyControl.ControlSystemSimulation(system)
@@ -16,13 +16,13 @@ systemSimu = fuzzyControl.ControlSystemSimulation(system)
 if __name__=='__main__':
     while True :
         # Case test
-        input_temp=input("Please enter air temperature in Celsiust\nor enter exit to leave \n")
+        input_temp=input("Please enter air temperature error in Celsiust (5-40)\nor enter exit to leave \n")
         if input_temp == 'exit':
             break
-        input_soil=input("Please enter soil moisture in percent\n")
+        input_humid=input("Please enter air moisture in percent (20-90)\n")
 
         systemSimu.input["temp"]=int(input_temp)
-        systemSimu.input["soil"]=int(input_soil)
+        systemSimu.input["humid"]=int(input_humid)
 
         ## system compute
         systemSimu.compute()
