@@ -26,7 +26,7 @@ conda create --name <env> --file packages.txt
 
 ## Performance surface
 
-![](graphs/initPS.png)
+![](graphs/newPS.png)
 
 # Problem 2 
 
